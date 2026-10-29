@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Replace the page title and description before publishing. -->
+    <title>Brainμ — Research Project</title>
+    <meta name="description" content="The research project page for Brainmu. Explore the model, demonstration, architecture, and citation." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="assets/favicon.ico?v=2" type="image/x-icon" />
+    <link rel="icon" href="assets/favicon.png?v=2" type="image/png" sizes="192x192" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main">
+      <section class="hero container" aria-labelledby="project-title">
+        <!-- EDIT: project / paper title and short subtitle. -->
+        <h1 id="project-title">Brainμ</h1>
+        <p class="hero-subtitle"><strong>Building a Neuroscience Foundation Model Through Pretrained Multi-Modal W🌍rld Models</strong></p>
+
+        <!-- EDIT: author groups and institution. -->
+        <div class="authors" aria-label="Authors">
+          <strong>Brainμ team</strong>
+          <strong>BrainToken consortium</strong>
+        </div>
+        <p class="affiliations">Beijing Academy of Artificial Intelligence</p>
+
+        <!-- EDIT: project code and model weights links. -->
+        <p class="project-links">
+          <a href="https://github.com/BAAI-Brain-Inspired-Group/Brainmu" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="project-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.29-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.16-3.02-.12-.29-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.15a10.67 10.67 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.62 1.55.23 2.69.12 2.98a4.35 4.35 0 0 1 1.15 3.02c0 4.33-2.64 5.28-5.15 5.56.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://huggingface.co/baai-brain/brainmu-tokenizer" target="_blank" rel="noopener noreferrer" aria-label="Huggingface">
+            <span class="project-icon huggingface-icon" aria-hidden="true">🤗</span>
+            <span>Huggingface</span>
+          </a>
+        </p>
+        <p class="project-notice">
+          <strong>News</strong>
+          <span>The <a href="https://huggingface.co/baai-brain/brainmu-tokenizer" target="_blank" rel="noopener noreferrer">Brainμ tokenizer for mouse data</a> is now released.</span>
+        </p>
+      </section>
+
+      <div class="container content">
+        <section id="overview" class="section overview" aria-labelledby="overview-title">
+          <div class="section-heading">
+            <h2 id="overview-title">Overview</h2>
+          </div>
+          <!-- Model overview supplied by the research team. -->
+          <div class="overview-copy">
+            <p>The development of universal foundation models for neuroscience has been constrained by the profound heterogeneity of neural recordings across species, modalities, individuals, and experimental paradigms. Unlike language and vision, where large-scale pretraining has yielded broadly generalizable representations, neural data remain fragmented across disparate measurement scales and experimental contexts, posing fundamental challenges to unified representation learning. Here we introduce <strong>Brainμ, a neuroscience foundation model</strong> that bridges these divides by integrating heterogeneous neural activity with knowledge acquired from pretrained multimodal models.</p>
+            <p>Brainμ encompasses 11 neural modalities across three species - humans, macaques, and mice, spanning invasive recordings at single-cell resolution, including Neuropixels electrophysiology and calcium imaging, to non-invasive measurements of macroscopic brain activity, such as EEG, MEG, fMRI, and fNIRS. By transforming heterogeneous neural signals into discrete tokens, Brainμ incorporates neural representations into a mixture-of-experts architecture that combines newly trained species-specific brain experts with pretrained experts for language, vision, audio, and video. A shared next-token prediction objective enables joint modeling of neural and non-neural modalities, establishing a unified framework for cross-modal knowledge transfer.</p>
+            <p>Within this framework, Brainμ supports any-to-any multimodal translation, enabling bidirectional transformations across neural modalities and between neural activity and external sensory representations. Moreover, we demonstrate multimodal scaling laws, revealing that increasing the diversity of neural modalities yields systematic performance gains and facilitates positive knowledge transfer across modalities. Together, these findings establish a foundation for scalable neural representation learning across species and measurement scales, advancing the development of general-purpose models for understanding and generating brain activity.</p>
+          </div>
+        </section>
+
+        <section id="demo" class="section" aria-label="Model demonstration">
+          <figure class="media-figure">
+            <div class="video-frame">
+              <!-- EDIT: replace assets/demo.mp4 to update the demonstration. -->
+              <video id="model-video" controls autoplay muted playsinline preload="metadata" aria-label="Brainμ model demonstration">
+                <source src="assets/demo.mp4" type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+              <div id="video-placeholder" class="video-placeholder" hidden>
+                <p>Model video</p>
+              </div>
+            </div>
+          </figure>
+        </section>
+
+        <section id="architecture" class="section" aria-labelledby="architecture-title">
+          <div class="section-heading">
+            <h2 id="architecture-title">Model Architecture</h2>
+          </div>
+          <figure class="media-figure">
+            <!-- EDIT: replace this file, or update src to your PNG / SVG / JPG. -->
+            <a class="architecture-frame" href="assets/model_arch.png" target="_blank" rel="noopener noreferrer" aria-label="View the Brainμ architecture diagram at full size">
+              <img src="assets/model_arch.png" alt="Brainμ architecture: general AI experts, physiology and behavior experts, and brain experts connect through shared next-token prediction to neural signals, physiological and behavioral signals, text, and images or video." width="1672" height="941" loading="lazy" />
+            </a>
+          </figure>
+        </section>
+
+        <section id="team" class="section team-section" aria-labelledby="team-title">
+          <div class="section-heading">
+            <h2 id="team-title">Team &amp; Citation</h2>
+          </div>
+
+          <!-- EDIT: team members and affiliations. -->
+          <div class="team-members">
+            <p><strong>Brainμ team</strong>: Bo Lei, Guofan Fan, Naixin Ren, Wenjie Chen, Zhiqiang Chen, Zecheng Hao, Zhongyuan Wang, Tiejun Huang, Yulong Ao, Jiayu Bao, Biqi Chen, Boyuan Deng, Lubin Gan, Jinying Gao, Chengwang Guo, Jinjie Guo, Ying Huang, Yuran Huang, Yiming Liang, Yilin Lu, Quanyue Ma, Hongjin Niu, Yijun Niu, Tengfei Pan, Yuhui Pan, Tian Sang, Borui Shang, Junbo Shen, Zhihao Su, Guanglong Sun, Kaixi Tian, Xunlong Wang, Yahui Wei, Yushan Wu, Zijia Wu, Shenghao Xie, Hongwei Yan, Haoyu Yang, Menghan Yu, Yingli Zhao, Zicong Zhou, Wenqiang Zu.</p>
+            <p><strong>BrainToken consortium:</strong> Yi Zhong (Tsinghua), Songhai Shi (Tsinghua), Shiming Tang (PKU), Hanchuan Peng (Fudan), Guo Zengcai Lab (Tsinghua), Yi Tang (Xuanwu), Xiaoxuan Jia (Tsinghua), Mu Zhou (Tsinghua), Xiaochuan Dai (Tsinghua), Yunzhe Liu (BNU &amp; CIBR), BrainCo.</p>
+          </div>
+
+          <div class="citation-intro">
+            <h3>Cite This Work</h3>
+            <p>If you find this work useful in your research, please consider citing it.</p>
+          </div>
+          <div class="citation-box">
+            <div class="citation-toolbar">
+              <span>BibTeX</span>
+              <button id="copy-citation" class="copy-button" type="button" aria-label="Copy BibTeX citation">
+                <span id="copy-label">Copy</span>
+              </button>
+            </div>
+            <!-- EDIT: replace the entire entry with your paper's BibTeX. -->
+            <pre><code id="citation-text">@software{brainmu,
+  <span class="citation-field">title   </span>= {Brainmu Project},
+  <span class="citation-field">author  </span>= {{The Brainmu Authors}},
+  <span class="citation-field">year    </span>= {2026},
+  <span class="citation-field">version </span>= {1.0.0},
+  <span class="citation-field">url     </span>= {https://github.com/BAAI-Brain-Inspired-Group/Brainmu}
+}</code></pre>
+          </div>
+          <p id="copy-status" class="sr-only" role="status" aria-live="polite"></p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer container">
+      <p>Brainμ · Beijing Academy of Artificial Intelligence</p>
+    </footer>
+  </body>
+</html>
